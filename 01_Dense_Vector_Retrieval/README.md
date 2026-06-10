@@ -87,18 +87,20 @@ Run the notebook sections that:
 Why is metadata important for a RAG application?
 
 ##### ✅ Answer:
-
+Metadata provides the context of the document. When retrieving documents, the metadata can be used to filter the results.
 #### ❓Question #3
 
 What tradeoff do we make when choosing chunk size and chunk overlap?
 
 ##### ✅ Answer:
+Compute time vs. retrieval accuracy. The smaller the chunk size, the more chunks we have to process, which increases compute time. However, smaller chunks can lead to more precise retrieval.
 
 #### ❓Question #4
 
 What does a similarity score help you understand, and what does it not prove by itself?
 
 ##### ✅ Answer:
+Similarity score helps understand the closeness between vectors, but it does not prove semantic meaning by itself. It may not always be accurate.
 
 ---
 
@@ -114,7 +116,7 @@ Run the notebook's vibe check queries and inspect both:
 For the vibe check queries, did the retrieved context seem relevant before generation? Why or why not?
 
 ##### ✅ Answer:
-
+The score were above .5. This seems to be trending high and approaching 1, which is a perfect match. I would say, yes, they are helpful.
 ---
 
 ## 🏗️ Activity #4: Tune Retrieval
@@ -129,14 +131,13 @@ Improve retrieval quality by changing one or more of:
 Document what changed and whether retrieval improved.
 
 ##### Settings Changed:
-
+I changed both the chunk size, to 500, and the overlap, to 100. 
 -
 
 ##### Results:
 
-1.
-2.
-3.
+1. Two questions, as opposed to one, the LLM did not have enough information to answer. I suspect the splits occurred in the middle of a relevante piece of data that preivously was more helpful.
+2. The LLM was able to answer the question, but it was not as detailed as the previous answer.
 
 ---
 
